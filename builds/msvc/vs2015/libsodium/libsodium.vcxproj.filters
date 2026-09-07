@@ -303,6 +303,12 @@
     <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\ref\chacha20_ref.c">
       <Filter>crypto_stream\chacha20\ref</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\chacha20_dolbeau-avx512.c">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\chacha20_dolbeau-neon.c">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\chacha20_dolbeau-avx2.c">
       <Filter>crypto_stream\chacha20\dolbeau</Filter>
     </ClCompile>
@@ -314,6 +320,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\ref\salsa20_ref.c">
       <Filter>crypto_stream\salsa20\ref</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-avx512.c">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-neon.c">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-avx2.c">
       <Filter>crypto_stream\salsa20\xmm6int</Filter>
@@ -842,6 +854,12 @@
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\ref\chacha20_ref.h">
       <Filter>crypto_stream\chacha20\ref</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u16.h">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u1-neon.h">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u4.h">
       <Filter>crypto_stream\chacha20\dolbeau</Filter>
     </ClInclude>
@@ -851,13 +869,28 @@
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u0.h">
       <Filter>crypto_stream\chacha20\dolbeau</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\chacha20_dolbeau-avx512.h">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u1.h">
       <Filter>crypto_stream\chacha20\dolbeau</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\chacha20_dolbeau-avx2.h">
       <Filter>crypto_stream\chacha20\dolbeau</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u4-neon.h">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\chacha20_dolbeau-neon.h">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u8.h">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u0-neon.h">
+      <Filter>crypto_stream\chacha20\dolbeau</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\chacha20\dolbeau\u2-neon.h">
       <Filter>crypto_stream\chacha20\dolbeau</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\stream_salsa20.h">
@@ -866,10 +899,19 @@
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\ref\salsa20_ref.h">
       <Filter>crypto_stream\salsa20\ref</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u16.h">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u1-neon.h">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u4.h">
       <Filter>crypto_stream\salsa20\xmm6int</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u0.h">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-avx512.h">
       <Filter>crypto_stream\salsa20\xmm6int</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u1.h">
@@ -878,10 +920,22 @@
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-avx2.h">
       <Filter>crypto_stream\salsa20\xmm6int</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-neon.h">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u4-neon.h">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u8.h">
       <Filter>crypto_stream\salsa20\xmm6int</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-sse2.h">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u0-neon.h">
+      <Filter>crypto_stream\salsa20\xmm6int</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6int\u2-neon.h">
       <Filter>crypto_stream\salsa20\xmm6int</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\libsodium\crypto_stream\salsa20\xmm6\salsa20_xmm6-asm_namespace.h">

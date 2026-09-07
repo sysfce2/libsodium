@@ -17,6 +17,15 @@
     defined(HAVE_TMMINTRIN_H) && defined(HAVE_SMMINTRIN_H)
 # include "xmm6int/salsa20_xmm6int-avx2.h"
 #endif
+#if defined(HAVE_AVX512FINTRIN_H) && defined(HAVE_AVX2INTRIN_H) && \
+    defined(HAVE_EMMINTRIN_H) && defined(HAVE_TMMINTRIN_H) &&      \
+    defined(HAVE_SMMINTRIN_H)
+# include "xmm6int/salsa20_xmm6int-avx512.h"
+#endif
+#if (defined(__aarch64__) || defined(_M_ARM64)) && \
+    (defined(__ARM_NEON) || defined(__ARM_NEON__))
+# include "xmm6int/salsa20_xmm6int-neon.h"
+#endif
 
 #if HAVE_AMD64_ASM
 static const crypto_stream_salsa20_implementation *implementation =
@@ -83,6 +92,14 @@ _crypto_stream_salsa20_pick_best_implementation(void)
     implementation = &crypto_stream_salsa20_ref_implementation;
 #endif
 
+#if defined(HAVE_AVX512FINTRIN_H) && defined(HAVE_AVX2INTRIN_H) && \
+    defined(HAVE_EMMINTRIN_H) && defined(HAVE_TMMINTRIN_H) &&      \
+    defined(HAVE_SMMINTRIN_H)
+    if (sodium_runtime_has_avx512f()) {
+        implementation = &crypto_stream_salsa20_xmm6int_avx512_implementation;
+        return 0;
+    }
+#endif
 #if defined(HAVE_AVX2INTRIN_H) && defined(HAVE_EMMINTRIN_H) && \
     defined(HAVE_TMMINTRIN_H) && defined(HAVE_SMMINTRIN_H)
     if (sodium_runtime_has_avx2()) {
@@ -93,6 +110,13 @@ _crypto_stream_salsa20_pick_best_implementation(void)
 #if !defined(HAVE_AMD64_ASM) && defined(HAVE_EMMINTRIN_H)
     if (sodium_runtime_has_sse2()) {
         implementation = &crypto_stream_salsa20_xmm6int_sse2_implementation;
+        return 0;
+    }
+#endif
+#if (defined(__aarch64__) || defined(_M_ARM64)) && \
+    (defined(__ARM_NEON) || defined(__ARM_NEON__))
+    if (sodium_runtime_has_neon()) {
+        implementation = &crypto_stream_salsa20_xmm6int_neon_implementation;
         return 0;
     }
 #endif

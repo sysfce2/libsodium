@@ -269,7 +269,19 @@ libarmcrypto_la_SOURCES = \
 	crypto_ipcrypt/ipcrypt_armcrypto.c \
 	crypto_ipcrypt/ipcrypt_armcrypto.h \
 	crypto_pwhash/argon2/argon2-fill-block-neon.c \
-	crypto_pwhash/argon2/blamka-round-neon.h
+	crypto_pwhash/argon2/blamka-round-neon.h \
+	crypto_stream/chacha20/dolbeau/chacha20_dolbeau-neon.c \
+	crypto_stream/chacha20/dolbeau/chacha20_dolbeau-neon.h \
+	crypto_stream/chacha20/dolbeau/u0-neon.h \
+	crypto_stream/chacha20/dolbeau/u1-neon.h \
+	crypto_stream/chacha20/dolbeau/u2-neon.h \
+	crypto_stream/chacha20/dolbeau/u4-neon.h \
+	crypto_stream/salsa20/xmm6int/salsa20_xmm6int-neon.c \
+	crypto_stream/salsa20/xmm6int/salsa20_xmm6int-neon.h \
+	crypto_stream/salsa20/xmm6int/u0-neon.h \
+	crypto_stream/salsa20/xmm6int/u1-neon.h \
+	crypto_stream/salsa20/xmm6int/u2-neon.h \
+	crypto_stream/salsa20/xmm6int/u4-neon.h
 
 libaesni_la_LDFLAGS = $(libsodium_la_LDFLAGS)
 libaesni_la_CPPFLAGS = $(libsodium_la_CPPFLAGS) \
@@ -347,4 +359,10 @@ libavx512f_la_CPPFLAGS = $(libsodium_la_CPPFLAGS) \
 	@CFLAGS_SSE2@ @CFLAGS_SSSE3@ @CFLAGS_SSE41@ @CFLAGS_AVX@ @CFLAGS_AVX2@ @CFLAGS_AVX512F@
 libavx512f_la_SOURCES = \
 	crypto_pwhash/argon2/argon2-fill-block-avx512f.c \
-	crypto_pwhash/argon2/blamka-round-avx512f.h
+	crypto_pwhash/argon2/blamka-round-avx512f.h \
+	crypto_stream/chacha20/dolbeau/chacha20_dolbeau-avx512.c \
+	crypto_stream/chacha20/dolbeau/chacha20_dolbeau-avx512.h \
+	crypto_stream/chacha20/dolbeau/u16.h \
+	crypto_stream/salsa20/xmm6int/salsa20_xmm6int-avx512.c \
+	crypto_stream/salsa20/xmm6int/salsa20_xmm6int-avx512.h \
+	crypto_stream/salsa20/xmm6int/u16.h
